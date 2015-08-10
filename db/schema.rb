@@ -11,13 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150808233807) do
+ActiveRecord::Schema.define(version: 20150810085050) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "shoppers", force: :cascade do |t|
-    t.string   "email",                  default: "", null: false
+    t.string   "email",                  default: ""
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -29,9 +29,19 @@ ActiveRecord::Schema.define(version: 20150808233807) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "nickname"
+    t.string   "name"
+    t.string   "image"
+    t.string   "bio"
+    t.string   "website"
+    t.string   "token"
   end
 
   add_index "shoppers", ["email"], name: "index_shoppers_on_email", unique: true, using: :btree
+  add_index "shoppers", ["provider"], name: "index_shoppers_on_provider", using: :btree
   add_index "shoppers", ["reset_password_token"], name: "index_shoppers_on_reset_password_token", unique: true, using: :btree
+  add_index "shoppers", ["uid"], name: "index_shoppers_on_uid", using: :btree
 
 end

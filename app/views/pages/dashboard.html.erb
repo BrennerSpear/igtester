@@ -1,2 +1,28 @@
-<h1>Pages#dashboard</h1>
-<p>Find me in app/views/pages/dashboard.html.erb</p>
+<table>
+  <thead>
+    <tr>
+      <th>Email</th>
+      <th>nickame</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @shoppers.each do |shopper| %>
+      <tr>
+        <td><%= shopper.email %></td>
+        <td><%= shopper.nickname %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div>
+  <% @shoppers.each do |shopper| %>
+  <div>
+    <% shopper.media.each do |post| %>
+      <%=image_tag post.images.standard_resolution.url%><br>
+      <% end %>
+  </div>
+  <% end %>
+</div>

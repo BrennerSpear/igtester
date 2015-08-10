@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  devise_for :shoppers
+
+  devise_for :shoppers, controllers: {omniauth_callbacks: "shoppers/omniauth_callbacks"}
+
+  resources :shoppers
+
   get 'pages/home'
 
   get 'pages/dashboard'

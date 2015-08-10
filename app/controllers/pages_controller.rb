@@ -3,5 +3,6 @@ class PagesController < ApplicationController
   end
 
   def dashboard
+  	@shoppers = Shopper.all
   end
 end
