@@ -5,6 +5,8 @@ gem 'devise'
 gem 'instagram'
 gem 'omniauth-instagram'
 gem 'figaro'
+gem 'puma'
+gem 'json'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
 # Use postgresql as the database for Active Record
@@ -41,6 +43,10 @@ group :development, :test do
   gem 'byebug'
   gem 'pry'
   gem 'pry-byebug'
+  gem 'pry-rails'
+  gem 'railroady'
+  gem 'rails-erd'
+
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'

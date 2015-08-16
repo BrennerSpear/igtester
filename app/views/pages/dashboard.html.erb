@@ -1,28 +1,17 @@
 <table>
   <thead>
     <tr>
-      <th>Email</th>
+      <th>UId</th>
       <th>nickame</th>
       <th colspan="3"></th>
     </tr>
   </thead>
-
   <tbody>
-    <% @shoppers.each do |shopper| %>
+    <% @shoppers.first.followers.each do |follower| %>
       <tr>
-        <td><%= shopper.email %></td>
-        <td><%= shopper.nickname %></td>
+        <td><%= follower.uid %></td>
+        <td><%= follower.username %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<div>
-  <% @shoppers.each do |shopper| %>
-  <div>
-    <% shopper.media.each do |post| %>
-      <%=image_tag post.images.standard_resolution.url%><br>
-      <% end %>
-  </div>
-  <% end %>
-</div>

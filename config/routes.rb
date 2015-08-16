@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  devise_for :shoppers, controllers: {omniauth_callbacks: "shoppers/omniauth_callbacks"}
+  devise_for :shoppers, skip: [:sessions], controllers: {omniauth_callbacks: "shoppers/omniauth_callbacks"}
 
   resources :shoppers
 
