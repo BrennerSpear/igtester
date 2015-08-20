@@ -1,17 +1,16 @@
-<table>
-  <thead>
-    <tr>
-      <th>UId</th>
-      <th>nickame</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @shoppers.first.followers.each do |follower| %>
-      <tr>
-        <td><%= follower.uid %></td>
-        <td><%= follower.username %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<%= link_to "Authorize your Instagram", "/auth/instagram" %>
+
+    <%= @current_brand.uid %>
+    <br>
+    <%= @current_brand.nickname %>
+    <br>
+    <%= @current_brand.name %>
+    <br>
+    <%= @current_brand.image %>
+    <br>
+    <%= @current_brand.bio %>
+    <br>
+    <%= @current_brand.token %>
+    <br>
+    <%= @current_brand.website %>
+    <br>

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :brands
   devise_for :shoppers, skip: [:sessions], controllers: {omniauth_callbacks: "shoppers/omniauth_callbacks"}
 
   resources :shoppers
@@ -8,7 +9,12 @@ Rails.application.routes.draw do
 
   get 'pages/dashboard'
 
+  get '/callback/instagram'
+  get '/auth/instagram'          => 'callback#authorize'
+  get '/auth/instagram/callback' => 'callback#instagram'
+
   root "pages#home"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
