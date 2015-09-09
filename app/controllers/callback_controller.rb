@@ -18,7 +18,7 @@ class CallbackController < ApplicationController
 
 		binding.pry
 
-		redirect_to pages_dashboard_path
+		redirect_to brand_dashboard_path
 
 	end
 end

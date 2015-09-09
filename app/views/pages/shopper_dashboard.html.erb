@@ -1,0 +1,17 @@
+    <%= @current_shopper.uid %>
+    <br>
+    <%= @current_shopper.nickname %>
+    <br>
+    <%= @current_shopper.name %>
+    <br>
+    <%= @current_shopper.image %>
+    <br>
+    <%= @current_shopper.bio %>
+    <br>
+    <%= @current_shopper.token %>
+    <br>
+    <%= @current_shopper.website %>
+    <br>
+  
+
+    <%= link_to "Log out", destroy_shopper_session_path, method: :delete, data: {confirm: "are you sure?"} %>

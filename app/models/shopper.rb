@@ -5,9 +5,7 @@ class Shopper < ActiveRecord::Base
   has_many :rewards, -> {uniq}, through: :posts,  source: :reward
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable,
-         :omniauthable, omniauth_providers: [:instagram]
+  devise :database_authenticatable, :rememberable, :omniauthable, omniauth_providers: [:instagram]
 
 
   def self.from_omniauth(auth, params)
@@ -22,13 +20,13 @@ class Shopper < ActiveRecord::Base
       end
 
       #So shoppers can change their email address by 'signing up again'
-      shopper.email = params["email"]
-      shopper.save!
+      # shopper.email = params["email"]
+      #shopper.save!
 
       #get all followers only if there aren't any
-      if shopper.followers.empty?
-        initiate_getting_followers(shopper, "Shopper")
-      end
+      # if shopper.followers.empty?
+      #   initiate_getting_followers(shopper, "Shopper")
+      # end
   		  
   end
 end 

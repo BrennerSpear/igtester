@@ -1,17 +1,20 @@
 Rails.application.routes.draw do
 
   devise_for :brands
-  devise_for :shoppers, skip: [:sessions], controllers: {omniauth_callbacks: "shoppers/omniauth_callbacks"}
+  devise_for :shoppers, controllers: {omniauth_callbacks: "shoppers/omniauth_callbacks"}
 
   resources :shoppers
 
-  get 'pages/home'
+  get 'home' => 'pages#home'
 
-  get 'pages/dashboard'
+  get 'brand_dashboard'   => 'pages#brand_dashboard'
+  get 'shopper_dashboard' => 'pages#shopper_dashboard'
 
-  get '/callback/instagram'
-  get '/auth/instagram'          => 'callback#authorize'
-  get '/auth/instagram/callback' => 'callback#instagram'
+  get 'denied_request'  => 'pages#denied_request'
+
+  # get '/callback/instagram'
+  # get '/auth/instagram'          => 'callback#authorize'
+  # get '/auth/instagram/callback' => 'callback#instagram'
 
   root "pages#home"
 

@@ -1,4 +1,4 @@
-<%= link_to "Authorize your Instagram", "/auth/instagram" %>
+<%= #link_to "Authorize your Instagram", "/auth/instagram" %>
 
     <%= @current_brand.uid %>
     <br>
@@ -14,3 +14,6 @@
     <br>
     <%= @current_brand.website %>
     <br>
+
+
+    <%= link_to "Log out", destroy_brand_session_path, method: :delete, data: {confirm: "are you sure?"} %>
