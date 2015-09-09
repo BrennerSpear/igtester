@@ -5,15 +5,16 @@ Rails.application.routes.draw do
 
   resources :shoppers
 
-  get 'pages/home'
+  get 'pages/entrance' => 'pages#entrance'
 
-  get 'pages/dashboard'
+  get 'pages/brand_dashboard' => "pages#brand_dashboard"
+  get 'pages/shopper_dashboard' => "pages#shopper_dashboard"
 
   get '/callback/instagram'
   get '/auth/instagram'          => 'callback#authorize'
   get '/auth/instagram/callback' => 'callback#instagram'
 
-  root "pages#home"
+  root "pages#entrance"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

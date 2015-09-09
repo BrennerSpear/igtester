@@ -4,6 +4,7 @@ class Brand < ActiveRecord::Base
 	# :confirmable, :lockable, :timeoutable and :omniauthable
 	devise :database_authenticatable, :registerable,
 	:recoverable, :rememberable, :trackable, :validatable
+	#,:omniauthable, omniauth_providers: [:bigcommerce]
 
 	has_one  :shop, inverse_of: :brand
 	has_many :orders,  -> {uniq}, through: :shops,  source: :order

@@ -4,6 +4,8 @@ gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootst
 gem 'devise'
 gem 'instagram'
 gem 'omniauth-instagram'
+gem 'bigcommerce', '>= 1.0.0.beta'
+gem 'omniauth-bigcommerce'
 gem 'figaro'
 gem 'puma'
 gem 'json'
@@ -29,7 +31,11 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
-gem 'devise'
+gem 'ember-cli-rails'
+
+gem "active_model_serializers", github: "rails-api/active_model_serializers", branch: "0-8-stable"
+
+gem "ember_serialize"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -42,13 +48,12 @@ gem 'devise'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
+  gem 'better_errors'
   gem 'pry'
-  gem 'pry-byebug'
   gem 'pry-rails'
   gem 'railroady'
   gem 'rails-erd'
-  gem 'better_errors'
+  gem 'byebug'
 
 
   # Access an IRB console on exception pages or by using <%= console %> in views
@@ -57,6 +62,6 @@ group :development, :test do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 
-  gem 'better_errors'
+  
 end
 
