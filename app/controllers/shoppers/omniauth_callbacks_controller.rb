@@ -1,7 +1,13 @@
 class Shoppers::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 	include Devise::Controllers::Rememberable
 
+	# def authorize
+	# 	binding.pry
+	# 	redirect_to Instagram.authorize_url(redirect_uri: "http://localhost:3000/auth/instagram/callback")
+	# end
+
 	def instagram
+
 		# email = extras["email"]
 
 		#Make sure no one tries to add an email address in the url

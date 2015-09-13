@@ -5,7 +5,7 @@ class Shopper < ActiveRecord::Base
   has_many :rewards, -> {uniq}, through: :posts,  source: :reward
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :rememberable, :omniauthable, omniauth_providers: [:instagram]
+  devise :database_authenticatable, :rememberable #, omniauth_providers: [:instagram]
 
 
   def self.from_omniauth(auth, params)

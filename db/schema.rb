@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150820165811) do
+ActiveRecord::Schema.define(version: 20150912023807) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,10 @@ ActiveRecord::Schema.define(version: 20150820165811) do
     t.string   "bio"
     t.string   "website"
     t.string   "token"
+    t.string   "provider"
+    t.string   "bcid"
+    t.string   "bctoken"
+    t.string   "store_hash"
   end
 
   add_index "brands", ["email"], name: "index_brands_on_email", unique: true, using: :btree

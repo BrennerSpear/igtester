@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   devise_for :brands
-  devise_for :shoppers, controllers: {omniauth_callbacks: "shoppers/omniauth_callbacks"}
+  devise_for :shoppers #, controllers: {omniauth_callbacks: "shoppers/omniauth_callbacks"}
 
   resources :shoppers
 
@@ -9,12 +9,18 @@ Rails.application.routes.draw do
 
   get 'brand_dashboard'   => 'pages#brand_dashboard'
   get 'shopper_dashboard' => 'pages#shopper_dashboard'
+  get 'load'              => 'pages#load'
+  post 'webhook'          => 'callback#webhook'
 
   get 'denied_request'  => 'pages#denied_request'
 
   # get '/callback/instagram'
   # get '/auth/instagram'          => 'callback#authorize'
   # get '/auth/instagram/callback' => 'callback#instagram'
+
+   get "/auth/:action/callback" => "callback", constraints: {action: /instagram|bigcommerce/}
+  
+
 
   root "pages#home"
 
